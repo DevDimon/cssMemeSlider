@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: dimgrey;
+    font-size: 0.8rem;
+    font-family: Arial;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    max-width: 40rem;
+    margin: 2rem auto;
+    padding: 2rem 2rem; 
+}
+
+.wrapper-images {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.images {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.images img {
+    width: 100%;
+    min-width: 100%;
+}
+
+#meme1:checked ~ .wrapper-images .images {
+    transform: translateX(0%);
+}
+#meme2:checked ~ .wrapper-images .images {
+    transform: translateX(-100%);
+}
+#meme3:checked ~ .wrapper-images .images {
+    transform: translateX(-200%);
+}
+#meme4:checked ~ .wrapper-images .images {
+    transform: translateX(-300%);
+}
+#meme5:checked ~ .wrapper-images .images {
+    transform: translateX(-400%);
+}
+
+.wrapper-texts-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+}
+
+.wrapper-texts {
+    width: 60%;
+    overflow: hidden;
+}
+
+.texts {
+    display: flex;
+    transition: transform 0.75s ease;
+}
+
+.text {
+    color: #fff;
+    flex-shrink: 0;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 2rem;
+}
+
+#meme1:checked ~ .wrapper-texts-controls .texts {
+    transform: translateX(0%);
+}
+#meme2:checked ~ .wrapper-texts-controls .texts {
+    transform: translateX(-100%);
+}
+#meme3:checked ~ .wrapper-texts-controls .texts {
+    transform: translateX(-200%);
+}
+#meme4:checked ~ .wrapper-texts-controls .texts {
+    transform: translateX(-300%);
+}
+#meme5:checked ~ .wrapper-texts-controls .texts {
+    transform: translateX(-400%);
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    row-gap: 0.1rem;
+    width: 40%;
+}
+
+.control {
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin: 0.5rem;   
+    border: 0.3rem solid #71abff;
+    background-color: #71abff ;
+}
+
+label:hover .control {
+    border-color: white;
+    background-color: white;
+    cursor: pointer;
+}
+
+label:active .control {
+    background-color: inherit;
+}
+
+#meme1:checked ~ .wrapper-texts-controls .controls .meme1, 
+#meme2:checked ~ .wrapper-texts-controls .controls .meme2,
+#meme3:checked ~ .wrapper-texts-controls .controls .meme3,
+#meme4:checked ~ .wrapper-texts-controls .controls .meme4,
+#meme5:checked ~ .wrapper-texts-controls .controls .meme5 {
+    background-color: inherit;
+}
+
+input {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .wrapper-texts-controls {
+        flex-direction: column-reverse;
+        height: 6rem;
+    }
+    
+    .controls {
+        justify-content: center;
+    }
+
+    .wrapper-texts {
+        width: 100%;
+    }
+}
