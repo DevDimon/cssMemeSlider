@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: dimgrey;
+    font-size: 0.8rem;
+    font-family: Arial;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    max-width: 50rem;
+    margin: 2rem auto;
+    padding: 2rem 2rem; 
+}
+
+.wrapper-images {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.images {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.images img {
+    width: 100%;
+    min-width: 100%;
+}
+
+#meme1:checked ~ .wrapper-images .images {
+    transform: translateX(0%);
+}
+#meme2:checked ~ .wrapper-images .images {
+    transform: translateX(-100%);
+}
+#meme3:checked ~ .wrapper-images .images {
+    transform: translateX(-200%);
+}
+#meme4:checked ~ .wrapper-images .images {
+    transform: translateX(-300%);
+}
+#meme5:checked ~ .wrapper-images .images {
+    transform: translateX(-400%);
+}
